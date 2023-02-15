@@ -287,7 +287,7 @@
 
 // const priceCheck = users.every((value)=>{
 //     return value.price <= 1000; // gives true
-    // return value.price >= 1000; // gives false
+// return value.price >= 1000; // gives false
 // })
 
 // const priceCheck = users.some((value)=>value.price >= 600)
@@ -510,22 +510,86 @@
 
 //! Creation of Object and the Problems we face 
 
-//! 1st way (not good) 
-function createUser(name,age,food){
-    const user = {};
-    user.name = name;
-    user.age  = age;
-    user.food = food;
-    user.about = function(){
-        return `${this.name} is ${this.age} years old`;
-    }
-    user.is18 = function(){
-        return this.age >=18;
-    }
-    return user;
-}
+//! 1st way (not good as too much memory is taken up by methods) 
+// function createUser(name,age,food){
+//     const user = {};
+//     user.name = name;
+//     user.age  = age;
+//     user.food = food;
+//     user.about = function(){
+//         return `${this.name} is ${this.age} years old`;
+//     }
+//     user.is18 = function(){
+//         return this.age >=18;
+//     }
+//     return user;
+// }
 
-const user1 = createUser("Remo",22,"Biriyani");
-console.log(user1);
-console.log(user1.about());
-console.log(user1.is18());
+// const user1 = createUser("Remo",22,"Biriyani");
+// console.log(user1);
+// console.log(user1.about());
+// console.log(user1.is18());
+
+//! 2nd way of Creating Object
+// const userMethods = {
+//     about: function () {
+//         return `${this.name} is ${this.age} years old`;
+//     },
+//     is18: function () {
+//         return this.age >= 18;
+//     }
+// }
+
+// function createUser(name, age, food) {
+//     const user = {};
+//     user.name = name;
+//     user.age = age;
+//     user.food = food;
+//     user.about = userMethods.about;
+//     user.is18 = userMethods.is18;
+//     return user;
+// }
+
+// const user1 = createUser("Remo",22,"Biriyani");
+// console.log(user1);
+// console.log(user1.about());
+// console.log(user1.is18());
+
+//! Chaining Object
+// const obj1 = {
+//     name : "Remo",
+//     age : 23
+// }
+
+// const obj2 = Object.create(obj1);
+// obj2.food = "Biriyani";
+// console.log(obj2);
+// console.log(obj2.name);
+// console.log(obj2.__proto__);
+
+
+//! 3rd way of creating Object 
+// const userMethods = {
+//     about: function () {
+//         return `${this.name} is ${this.age} years old`;
+//     },
+//     is18: function () {
+//         return this.age >= 18;
+//     }
+// }
+
+// function createUser(name, age, food) {
+//     const user = Object.create(userMethods);
+//     user.name = name;
+//     user.age = age;
+//     user.food = food;
+//     return user;
+// }
+
+// const user1 = createUser("Remo",22,"Biriyani");
+// console.log(user1);
+// console.log(user1.about());
+// console.log(user1.is18());
+
+//! Prototype
+ 
