@@ -592,4 +592,127 @@
 // console.log(user1.is18());
 
 //! Prototype
- 
+// function sample(){
+//     return ("This is a function");
+// }
+
+//? function property 
+// console.log(sample());
+// sample.first = "Hello";
+
+//? function prototype property
+// sample.prototype.name = "Remo";
+// sample.prototype.age = 23;
+// sample.prototype.details = function(){
+//     return `${this.name} is ${this.age} years old`;
+// }
+// console.log(sample.prototype);
+// console.log(sample.prototype.details());
+
+//! 4th way of Creating Object
+// function createUser(name, age, food) {
+//     const user = Object.create(createUser.prototype);
+//     user.name = name;
+//     user.age = age;
+//     user.food = food;
+//     return user;
+// }
+
+// createUser.prototype.about = function(){
+//     return `${this.name} is ${this.age} years old`;
+// }
+
+// createUser.prototype.is18 = function () {
+//     return this.age >= 18;
+// }
+
+// const user1 = createUser("Remo",22,"Biriyani");
+// console.log(user1);
+// console.log(user1.about());
+// console.log(user1.is18());
+
+//! new keyword
+// function createUser(fname,age){
+//     this.fname = fname;
+//     this.age = age;
+// }
+
+// createUser.prototype.about = function(){
+//     return `${this.fname} is ${this.age} years old`;
+// }
+
+// const user1 = new createUser("Remo",23);
+// const user2 = new createUser("Harry",27);
+// console.log(user1);
+// console.log(user2);
+// console.log(user1.about());
+// console.log(user2.about());
+
+//! 5th way of Creating Object using new keyword 
+// function CreateUser(name,age,food){
+//     this.name = name;
+//     this.age = age;
+//     this.food = food;
+// }
+
+// CreateUser.prototype.about = function(){
+//     return `${this.name} is ${this.age} years old`;
+// }
+
+// CreateUser.prototype.is18 = function(){
+//     return this.age >=18;
+// }
+
+// const user1 = new CreateUser("Remo",23,"Biriyani");
+// const user2 = new CreateUser("Harry",27,"Fried Rice");
+// console.log(user1);
+// console.log(user1.about());
+// console.log(user2.about());
+
+// for(let key in user1){
+//     if(user1.hasOwnProperty(key)){
+//         console.log(key);
+//     }
+// }
+
+//! More about prototype
+// let num = [1,2,3];
+// js creates array internally like this 👇
+// let num = new Array(1,2,3);
+// console.log(num);
+// console.log(Object.prototype);
+// console.log(Array.prototype);
+
+//! constructor
+// function CreateUser(name,age){
+//      this.name = name;
+//      this.age = age;
+// } 
+
+// const user1 = new CreateUser("Remo",23);
+// console.log(user1);
+// console.log(CreateUser.prototype);
+
+//! class keyword
+class CreateUser{
+  constructor(name,age,food){
+     this.name = name;
+     this.age = age;
+     this.food = food;
+  }
+  
+  about(){
+     return `${this.name} is ${this.age} years old`;
+  }
+
+  is18(){
+     return this.age >=18;
+  }
+} 
+
+const user1 = new CreateUser("Remo",23,"Biriyani");
+console.log(user1);
+console.log(user1.about());
+console.log(user1.is18());
+
+console.log(Object.getPrototypeOf(user1));
