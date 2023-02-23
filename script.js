@@ -694,25 +694,99 @@
 // console.log(CreateUser.prototype);
 
 //! class keyword
-class CreateUser{
-  constructor(name,age,food){
-     this.name = name;
-     this.age = age;
-     this.food = food;
-  }
+// class CreateUser{
+//   constructor(name,age,food){
+//      this.name = name;
+//      this.age = age;
+//      this.food = food;
+//   }
   
-  about(){
-     return `${this.name} is ${this.age} years old`;
-  }
+//   about(){
+//      return `${this.name} is ${this.age} years old`;
+//   }
 
-  is18(){
-     return this.age >=18;
-  }
-} 
+//   is18(){
+//      return this.age >=18;
+//   }
+// } 
 
-const user1 = new CreateUser("Remo",23,"Biriyani");
-console.log(user1);
-console.log(user1.about());
-console.log(user1.is18());
+// const user1 = new CreateUser("Remo",23,"Biriyani");
+// console.log(user1);
+// console.log(user1.about());
+// console.log(user1.is18());
 
-console.log(Object.getPrototypeOf(user1));
+// console.log(Object.getPrototypeOf(user1));
+
+//! practice of class keyword
+// create an animal class then it will have 2 properties (name & age) and method (eat)
+
+// class Dog{
+//      constructor(name,age){
+//           this.name = name;
+//           this.age = age;
+//      }
+//      details(){
+//           return `${this.name} is very cute and is ${this.age} years old`;
+//      }
+// }
+
+// const animal1 = new Dog("Dog",20);
+// console.log(animal1);
+// console.log(animal1.details());
+
+// class Cat extends Dog{};
+
+// const animal2 = new Cat("Cat",28)
+// console.log(animal2.details());
+
+//! what if we want to add more property/methods to our child class ?
+// we use super() method
+// class Cat extends Dog{
+//      constructor(name,age,food){
+//           super(name,age);
+//           this.food = food;
+//      }
+//      foody(){
+//           return `${this.name} loves to eat ${this.food}`;
+//      }
+// }
+// const animal2 = new Cat("Cat",28,"fish");
+// console.log(animal2);
+// console.log(animal2.foody());
+
+//! getter and setters 
+// class Person{
+//      constructor(fname,lname,age){
+//           this.fname = fname;
+//           this.lname = lname;
+//           this.age = age;
+//      }
+
+//      get details(){
+//           return `${this.fname} ${this.lname} is ${this.age} years old`;
+//      }
+
+//      set fullName(fullName){
+//          const [fname,lname] = fullName.split(" ");
+//          this.fname = fname;
+//          this.lname = lname;
+//      }
+// }
+
+// const per1 = new Person("Sharadindu","Das",23);
+// console.log(per1);
+// console.log(per1.details);
+// per1.fullName = "Rimo Das";
+// console.log(per1);
+
+//! static method and properties
+// class Person{
+//      static classInfo(){
+//           return "This is a static method !!!";
+//      }
+
+//      static classProp = "This is a static property !!!";
+// }
+
+// console.log(Person.classInfo());
+// console.log(Person.classProp);
